@@ -1,0 +1,148 @@
+body,
+html {
+  background-color: #fff7ed !important;
+  font-family: "Inter", sans-serif;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+nav {
+  height: 110px;
+}
+
+.text-red {
+  color: red !important;
+}
+
+.hero,
+.about {
+  min-height: 80vh;
+}
+
+.footer {
+  height: 10vh;
+}
+
+.my-button {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  background-color: #ff8c38;
+  border: none;
+  width: 100%;
+  margin-top: 27px;
+  padding-block: 0.75rem;
+  color: white;
+  font-weight: 700;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
+.my-button:hover {
+  transform: translate(1px, 1px);
+}
+
+.explore {
+  background-color: #ffcc8d;
+  padding: 1.5rem;
+  border-radius: 0.2rem;
+}
+
+.explore-btn {
+  background-color: #161616;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  margin-top: 1.5rem;
+  border: none;
+  text-decoration: none;
+}
+
+.explore-btn:hover {
+  color: #ffffff;
+}
+
+.hero {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)),
+    url("./assets/home-hero.png") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 77vh;
+  color: white;
+  padding: 45px 23px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bg-hero h1 {
+  font-size: 2.25rem;
+  line-height: 42px;
+}
+
+.bg-footer {
+  background-color: #1b1b1b;
+}
+
+.about-img {
+  width: 100%;
+  height: auto;
+}
+
+.yellow-btn {
+  background-color: lightyellow;
+  color: black;
+  padding: 0.5rem;
+  border: none;
+
+  font-weight: 600;
+}
+
+.van-type {
+  border: none;
+  outline: none;
+  padding: 0.3rem 1.8rem;
+  border-radius: 0.2rem;
+  color: white;
+}
+
+.simple {
+  background-color: orange;
+}
+
+.rugged {
+  background-color: green;
+}
+
+.luxury {
+  background-color: black;
+}
+
+/* nav a,
+div a {
+  text-decoration: none;
+} */
+
+
+div a:hover {
+ color: rgba(0,0,0,0.7) !important;
+  text-underline-offset: 2px;
+}
+
+div a.active:hover {
+  text-underline-offset: 2px;
+}
+
+#logo:hover {
+  color: unset !important;
+}
