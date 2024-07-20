@@ -7,7 +7,10 @@ const Layout = () => {
   return (
     <div className='d-flex flex-column' style={{minHeight: '100vh'}}>
         <Nav />
+        <div className='flex-fill'>
         <Outlet />
+        </div>
+       
         <Footer />
     </div>
   )

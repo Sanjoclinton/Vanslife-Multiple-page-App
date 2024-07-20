@@ -23,7 +23,7 @@ nav {
 
 .hero,
 .about {
-  min-height: 80vh;
+  height: calc(100vh - calc(10vh + 110px));
 }
 
 .footer {
