@@ -10,7 +10,7 @@ const HostVans = () => {
       {isPending && <p>Loading...</p>}
       {error && <p>{error}</p>}
       {data &&
-        data.map((van) => (
+        data.slice(0,3).map((van) => (
           <Link
             key={van.id}
             to={`/host/vans/${van.id}`}

@@ -13,7 +13,7 @@ const HostLayout = () => {
               to={navLink.to}
               end={index === 0 && true}
               className={({ isActive }) =>
-                `text-dark  ${index !== hostNav.length - 1 && "me-3 me-md-5"}  ${!isActive && "text-decoration-none"} `
+                `text-dark  ${index !== hostNav.length - 1 && "me-3 me-md-5"}  ${!isActive && "text-decoration-none"} ${isActive && 'fw-bold'} `
               }
             >
               {navLink.title}
