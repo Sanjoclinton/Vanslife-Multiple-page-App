@@ -11,7 +11,7 @@ const Dashboard = () => {
         <div className="d-flex justify-content-between">
           <p>
             Income last{" "}
-            <span className="fw-semibold text-decoration-underline link-offset-2">
+            <span className="fw-semibold text-decoration-underline link-offset-2 opacity-75">
               30 days
             </span>
           </p>
@@ -37,9 +37,17 @@ const Dashboard = () => {
           <p>View all</p>
         </div>
         {data &&
-          data.slice(0,3).map((van, index) => (
-            <div key={van.id} className="d-flex align-items-center bg-white p-3 my-3">
-              <img src={van.imageUrl} width={50} alt={van.name} className="rounded-1" />
+          data.slice(0, 3).map((van, index) => (
+            <div
+              key={van.id}
+              className="d-flex align-items-center bg-white p-3 my-3"
+            >
+              <img
+                src={van.imageUrl}
+                width={50}
+                alt={van.name}
+                className="rounded-1"
+              />
               <div className="ms-3">
                 <p className="mb-0 fw-bold">{van.name}</p>
                 <p className="mb-0">${van.price}/day</p>
