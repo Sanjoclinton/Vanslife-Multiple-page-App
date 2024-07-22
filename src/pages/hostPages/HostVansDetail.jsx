@@ -16,9 +16,9 @@ const HostVansDetail = () => {
           <Link
             to=".."
             relative="path"
-            className="text-dark text-decoration-none fw-semibold"
+            className="text-dark text-decoration-none "
           >
-            <FaArrowLeft /> Back to all vans
+            <FaArrowLeft /> <span className="ms-2 text-decoration-underline link-offset-2">Back to all vans</span>
           </Link>
           {isPending && <p>Loading...</p>}
           {error && <p>{error}</p>}
@@ -28,7 +28,7 @@ const HostVansDetail = () => {
                 <img
                   src={data.imageUrl}
                   alt={data.name}
-                  width={100}
+                  width={160.15}
                   className="rounded-0 img-fluid"
                 />
                 <div className="d-flex flex-column align-items-start justify-content-between">
@@ -57,7 +57,7 @@ const HostVansDetail = () => {
               className={({ isActive }) =>
                 `text-dark ${
                   index !== hostVansLinks.length - 1 && "me-3 me-md-5"
-                } ${!isActive && "text-decoration-none"} `
+                } ${!isActive && "text-decoration-none"} ${isActive && 'fw-bold'} `
               }
             >
               {link.title}
