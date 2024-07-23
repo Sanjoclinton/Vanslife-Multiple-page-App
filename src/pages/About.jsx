@@ -26,7 +26,7 @@ const About = () => {
           <h5>
             Your destination is waiting. <br /> Your van is ready.
           </h5>
-          <button>
+          <button className="mt-3">
           <Link to="/vans">
             Explore our vans
           </Link>

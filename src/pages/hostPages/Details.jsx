@@ -4,22 +4,20 @@ import { useOutletContext } from "react-router-dom";
 const Details = () => {
   const currentVan = useOutletContext();
   return (
-    <div className="container mb-5">
+    <div className="details">
       {currentVan && (
-        <div className=" bg-white p-3">
-          <p className="mb-2">
-            <span className="fw-bold">Name:</span> {currentVan.name}
+        <div>
+          <p className="info">
+            Name:<span> {currentVan.name}</span>
           </p>
-          <p className="mb-2 text-capitalize">
-            <span className="fw-bold ">Category:</span>{" "}
-            {currentVan.type}
+          <p className="info">
+            Category:<span className="text-capitalize"> {currentVan.type}</span>
           </p>
-          <p className="mb-2">
-            <span className="fw-bold">Description:</span>{" "}
-            {currentVan.description}
+          <p className="info">
+            Description:<span> {currentVan.description}</span>
           </p>
-          <p className="mb-2">
-            <span className="fw-bold">Visibility:</span> Public
+          <p className="info">
+            Visibility:<span> Public</span>
           </p>
         </div>
       )}

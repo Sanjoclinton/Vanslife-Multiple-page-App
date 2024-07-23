@@ -44,7 +44,7 @@ const Dashboard = () => {
           <h5>View all</h5>
         </div>
         {data &&
-          data.slice(0, 3).map((van, index) => (
+          data.slice(0, 3).map((van) => (
             <div
               key={van.id}
               className="d-flex align-items-center bg-white p-3 my-3"

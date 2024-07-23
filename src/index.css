@@ -209,7 +209,8 @@ footer p {
   margin: 0;
 }
 
-.vans button {
+.vans button,
+.van-type {
   width: 85.71px;
   height: 33.89px;
   border-radius: 5px;
@@ -415,4 +416,144 @@ footer p {
   border-radius: 5px;
   height: 65.88px;
   width: 65.88px;
+}
+
+.details .info {
+  font-size: 14.35px;
+  font-weight: 700;
+  line-height: 21.46px;
+  color: #161616;
+}
+
+.details .info span {
+  font-family: Inter;
+  font-size: 14.35px;
+  font-weight: 500;
+  line-height: 21.46px;
+  text-align: left;
+}
+
+/* HOST REVIEWS STYLING */
+.host-reviews h3 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 33.65px;
+  margin: 0;
+
+  color: #161616;
+}
+
+.host-reviews p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  margin: 0;
+  color: #161616;
+}
+
+.host-reviews .title p {
+  color: #4d4d4d;
+}
+
+.host-reviews .title span {
+  color: #161616;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 700;
+}
+
+.host-reviews .ratings p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22.92px;
+  margin: 0;
+  color: #4d4d4d;
+}
+
+.host-reviews h4 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22.92px;
+  color: #161616;
+}
+
+.review-card h6 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 31.66px;
+  color: #161616;
+}
+
+.review-card span {
+  color: #8c8c8c;
+}
+
+.review-card p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22.16px;
+  color: #161616;
+}
+
+.income {
+  color: #161616;
+}
+
+.income h3 {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 22px;
+  margin-bottom: 2rem;
+}
+
+.income p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #4d4d4d;
+  margin: 0;
+}
+
+.income span {
+  font-weight: 600;
+  color: #161616;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.income h2 {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 38px;
+  margin-top: 2rem;
+}
+
+.income g {
+  color: #4d4d4d;
+}
+
+.income h4 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+.income .transaction {
+  height: 102px;
+  border-radius: 6px;
+  background: #ffffff;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.income h5 {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 31.66px;
+}
+
+.income .transaction p {
+font-size: 20px;
+line-height: 31.66px;
 }

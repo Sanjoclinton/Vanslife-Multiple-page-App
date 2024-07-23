@@ -3,16 +3,14 @@ import { transactions } from "../../constants";
 
 const Income = () => {
   return (
-    <div className="container">
-      <div>
-        <h2 className="fw-bold">Income</h2>
-        <p>
-          Last{" "}
-          <span className="fw-semibold text-decoration-underline link-offset-2 opacity-75">
-            30 days
-          </span>
+    <div className="container income mt-4">
+      <div className="title">
+        <h3>Income</h3>
+
+        <p className="">
+          Last <span>30 days</span>
         </p>
-        <h2 className="fw-bold">$2,260</h2>
+        <h2>$2,260</h2>
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 98">
         {/* Horizontal axis */}
@@ -116,7 +114,7 @@ const Income = () => {
         </g>
 
         {/* Vertical axis */}
-        <g>
+        <g className="vertical">
           {/* Texts on the vertical axis */}
           <text x="0" y="84" fontSize="0.28em">
             $0
@@ -139,28 +137,27 @@ const Income = () => {
         </g>
       </svg>
       <div className="py-5">
-        <div className="d-flex justify-content-between">
-          <p className="fw-bold">Your transactions (3)</p>
+        <div className="d-flex justify-content-between mb-4 ">
+          <h4 >Your transactions (3)</h4>
           <p>
             Last{" "}
-            <span className="fw-semibold text-decoration-underline link-offset-2 opacity-75">
+            <span >
               30 days
             </span>
           </p>
         </div>
         <div className="d-flex flex-column gap-4">
-          {transactions.map((transaction,) => (
+          {transactions.map((transaction) => (
             <div
               key={transaction.id}
-              className={`p-4 bg-white d-flex justify-content-between `}
+              className='transaction'
             >
-              <h5 className="fw-bold">${transaction.amount}</h5>
+              <h5>${transaction.amount}</h5>
               <p>{transaction.date}</p>
             </div>
           ))}
         </div>
       </div>
-      
     </div>
   );
 };
