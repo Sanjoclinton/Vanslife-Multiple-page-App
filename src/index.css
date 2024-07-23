@@ -147,9 +147,9 @@ footer p {
 }
 
 .explore-container h5 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
-  line-height: 30px;
+  line-height: 28px;
 }
 
 .explore-container button {
@@ -189,15 +189,15 @@ footer p {
 }
 
 .vans h3 {
-  font-size: 20px;
+  font-size: 15.5px;
   font-weight: 600;
-  line-height: 31.66px;
+  line-height: 18.66px;
   color: #161616;
   margin: 0;
 }
 
 .vans h4 {
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 600;
   color: #161616;
   margin: 0;
@@ -221,9 +221,9 @@ footer p {
   color: #ffffff;
   text-transform: capitalize;
 
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 600;
-  line-height: 31.66px;
+  line-height: 14.66px;
 }
 
 .simple {
@@ -537,7 +537,7 @@ footer p {
 }
 
 .income h4 {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   line-height: 22px;
 }
@@ -552,12 +552,12 @@ footer p {
 }
 
 .income h5 {
-  font-size: 36px;
+  font-size: 28px;
   font-weight: 600;
   line-height: 31.66px;
 }
 
 .income .transaction p {
-font-size: 20px;
+font-size: 18px;
 line-height: 31.66px;
 }

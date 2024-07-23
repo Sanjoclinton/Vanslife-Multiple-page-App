@@ -53,9 +53,9 @@ const HostVansDetail = () => {
                 <button className={`${data.type} van-type`}>{data.type}</button>
                 <h3
                   style={{
-                    fontSize: "26.06px",
+                    fontSize: "16.06px",
                     fontWeight: "700",
-                    lineHeight: "27.4px",
+                    lineHeight: "23.4px",
                     marginTop: "1rem",
                   }}
                 >
@@ -63,9 +63,9 @@ const HostVansDetail = () => {
                 </h3>
                 <p
                   style={{
-                    fontSize: "19.54px",
+                    fontSize: "15.54px",
                     fontWeight: "700",
-                    lineHeight: "35.95px",
+                    lineHeight: "20.95px",
                     margin: "0",
                   }}
                 >
