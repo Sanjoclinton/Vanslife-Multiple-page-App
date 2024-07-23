@@ -10,8 +10,8 @@ const HostVansDetail = () => {
 
   return (
     <>
-      <div className="container ">
-        <Link to="..">
+      <div className="container mb-5">
+        <Link to=".." relative="path">
           <div
             style={{
               textDecoration: "underline",
@@ -33,7 +33,6 @@ const HostVansDetail = () => {
         {data && (
           <div
             style={{
-              width: "496px",
               background: "#ffffff",
               padding: "1.5rem",
               borderRadius: "6px",
@@ -90,6 +89,7 @@ const HostVansDetail = () => {
                   key={link.id}
                   to={link.to}
                   end={index === 0}
+                  
                   className={({ isActive }) => (isActive ? "active" : null)}
                 >
                   {link.title}

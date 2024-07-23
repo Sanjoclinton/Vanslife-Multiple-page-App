@@ -6,7 +6,7 @@ const HostLayout = () => {
   return (
     <>
       <div className="w-full container py-4">
-        <nav className="d-flex justify-space-between gap-5">
+        <nav className="d-flex justify-space-between gap-3">
           {hostNav.map((navLink, index) => (
             <NavLink
               key={navLink.id}

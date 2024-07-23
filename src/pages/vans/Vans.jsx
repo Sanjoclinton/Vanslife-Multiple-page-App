@@ -5,12 +5,12 @@ const Vans = () => {
   const { data, isPending, error } = useFetch("/api/vans");
 
   return (
-    <div className="container vans mt-5">
+    <div className="container vans mt-4">
       <h1 className="mt-2">Explore our van options</h1>
       {isPending && <p>Loading...</p>}
       {error && <p>{error}</p>}
 
-      <div className="row g-4 g-md-5 mb-5">
+      <div className="row g-4 g- mb-5">
         {data && data.map((van) => (
           <div key={van.id} className="col-6">
             <Link className="text-decoration-none" to={`/vans/${van.id}`}>

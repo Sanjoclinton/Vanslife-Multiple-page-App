@@ -16,7 +16,7 @@ const Details = () => {
           <p className="info">
             Description:<span> {currentVan.description}</span>
           </p>
-          <p className="info">
+          <p className="info m-0">
             Visibility:<span> Public</span>
           </p>
         </div>

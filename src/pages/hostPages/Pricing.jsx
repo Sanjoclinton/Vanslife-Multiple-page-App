@@ -12,6 +12,7 @@ const Pricing = () => {
             fontWeight: "500",
             lineHeight: "21.46px",
             color: "#161616",
+            margin: '0'
           }}
         >
           ${currentVan.price}.00

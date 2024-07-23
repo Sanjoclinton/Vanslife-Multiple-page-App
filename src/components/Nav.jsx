@@ -7,7 +7,7 @@ const Nav = () => {
       <header className="d-flex align-items -center justify-content-center">
         <nav className="w-full d-flex container align-items-center">
           <NavLink id="logo" className="text-decoration-none" to="/">
-            #VANLIFE
+            VANLIFE
           </NavLink>
           <div className="d-flex flex-grow-1 justify-content-end gap-3 gap-md-5">
             {homeNav.map((navLink) => (

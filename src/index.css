@@ -137,8 +137,10 @@ footer p {
 }
 
 .explore-container {
-  width: 494px;
-  height: 198px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ 
   border-radius: 5px;
   padding: 2rem 2rem;
   background-color: #ffcc8d;
@@ -423,6 +425,7 @@ footer p {
   font-weight: 700;
   line-height: 21.46px;
   color: #161616;
+  
 }
 
 .details .info span {
