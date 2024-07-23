@@ -21,7 +21,7 @@ const Vans = () => {
                 className="img-fluid"
               />
               <div className="d-flex justify-content-between gap-2 mt-3">
-                <h3 className="fw-bold">{van.name}</h3>
+                <h3>{van.name}</h3>
                 <div className="d-flex flex-column align-items-end fw-semibold">
                  <h4>${van.price}</h4> 
                   <h5 className="mb-0">/day</h5>

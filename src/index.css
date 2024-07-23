@@ -219,6 +219,7 @@ footer p {
   border: none;
   outline: none;
   color: #ffffff;
+  text-transform: capitalize;
 
   font-size: 16px;
   font-weight: 600;
