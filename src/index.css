@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap");
+
 body,
 html {
-  background-color: #fff7ed !important;
+  background-color: #fff7ed;
   font-family: "Inter", sans-serif;
 }
 
@@ -13,145 +16,403 @@ body {
   scrollbar-width: none;
 }
 
-nav {
-  height: 110px;
+/* Nav styling */
+
+header {
+  height: 111.62px;
 }
 
-.text-red {
-  color: red !important;
+#logo {
+  font-size: 25.35px;
+  font-weight: 900;
+  line-height: 40.27px;
+  text-align: left;
+  color: black;
 }
 
-.hero,
-.about {
-  height: calc(100vh - calc(10vh + 110px));
+nav a {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22.92px;
+  text-align: right;
+  color: #4d4d4d;
 }
 
-.footer {
-  height: 10vh;
+a {
+  text-decoration: none;
 }
 
-.my-button {
-  display: inline-block;
+nav a.active {
+  text-decoration: underline;
+  color: #161616;
+  text-underline-offset: 3px;
+}
+
+/* Footer styling */
+footer {
+  background: #252525;
+  height: 74.75px;
+  padding: 25.68px 106.28px 25.15px 106px;
+  opacity: 0px;
+}
+
+footer p {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22.92px;
   text-align: center;
-  text-decoration: none;
-  background-color: #ff8c38;
-  border: none;
-  width: 100%;
-  margin-top: 27px;
-  padding-block: 0.75rem;
-  color: white;
-  font-weight: 700;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.1s ease-in-out;
+  margin: 0;
+  color: #aaaaaa;
 }
 
-.my-button:hover {
-  transform: translate(1px, 1px);
-}
-
-.explore {
-  background-color: #ffcc8d;
-  padding: 1.5rem;
-  border-radius: 0.2rem;
-}
-
-.explore-btn {
-  background-color: #161616;
-  color: rgba(255, 255, 255, 0.8);
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  margin-top: 1.5rem;
-  border: none;
-  text-decoration: none;
-}
-
-.explore-btn:hover {
-  color: #ffffff;
-}
-
+/* Hero styling */
 .hero {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)),
+  background: #00000075;
+  padding: 6rem 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.75)),
     url("./assets/home-hero.png") no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  min-height: 77vh;
   color: white;
-  padding: 45px 23px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.bg-hero h1 {
-  font-size: 2.25rem;
+.hero h1 {
+  font-size: 36px;
+  font-weight: 800;
   line-height: 42px;
 }
 
-.bg-footer {
-  background-color: #1b1b1b;
+.hero p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
 }
 
-.about-img {
-  width: 100%;
-  height: auto;
-}
-
-.yellow-btn {
-  background-color: lightyellow;
-  color: black;
-  padding: 0.5rem;
+.hero button {
   border: none;
-
-  font-weight: 600;
+  border-radius: 5px;
+  background: #ff8c38;
+  cursor: pointer;
+  height: 49.83px;
 }
 
-.van-type {
+.hero a {
+  display: block;
+  text-decoration: none;
+  font-size: 15.95px;
+  font-weight: 700;
+  line-height: 31.66px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.hero a:hover {
+  color: #f1f1f1;
+}
+
+.hero button:hover {
+  transform: translate(1px, 1px);
+}
+
+/* ABOUT STYLING */
+
+.about img {
+  width: 100%;
+  height: 233.21px;
+}
+
+.about h2 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38px;
+  color: #161616;
+}
+
+.about p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #161616;
+}
+
+.explore-container {
+  width: 494px;
+  height: 198px;
+  border-radius: 5px;
+  padding: 2rem 2rem;
+  background-color: #ffcc8d;
+}
+
+.explore-container h5 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.explore-container button {
+  width: 174px;
+  height: 49px;
+  border-radius: 10px;
+  background: #161616;
+  border: none;
+}
+
+.explore-container a {
+  font-size: 15.95px;
+  font-weight: 700;
+  line-height: 23.92px;
+  text-align: left;
+  color: #ffffff;
+}
+
+.explore-container a:hover {
+  color: #f1f1f1;
+}
+
+.explore-container button:hover {
+  transform: translate(1px, 1px);
+}
+
+/* STYLING VANS PAGE */
+.vans h1 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 33.65px;
+  color: #161616;
+}
+
+.vans img {
+  border-radius: 5px;
+}
+
+.vans h3 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 31.66px;
+  color: #161616;
+  margin: 0;
+}
+
+.vans h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #161616;
+  margin: 0;
+}
+
+.vans h5 {
+  font-family: "Maven Pro", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #161616;
+  margin: 0;
+}
+
+.vans button {
+  width: 85.71px;
+  height: 33.89px;
+  border-radius: 5px;
   border: none;
   outline: none;
-  padding: 0.3rem 1.8rem;
-  border-radius: 0.2rem;
-  color: white;
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 31.66px;
 }
 
 .simple {
-  background-color: orange;
+  background: #e17654;
 }
 
 .rugged {
-  background-color: green;
+  background: #115e59;
 }
 
 .luxury {
-  background-color: black;
+  background-color: #161616;
 }
 
-/* nav a,
-div a {
-  text-decoration: none;
-} */
-
-
-div a:hover {
- color: rgba(0,0,0,0.7) !important;
-  text-underline-offset: 2px;
+/* Van detail styling */
+.van-detail img {
+  border: 5px;
 }
 
-div a.active:hover {
-  text-underline-offset: 2px;
+.van-detail button {
+  height: 33.89px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  padding: 0rem 1rem;
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 31.66px;
+
+  margin: 1rem 0 0 0;
 }
 
-#logo:hover {
-  color: unset !important;
+.van-detail h3 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 33.65px;
+  color: #161616;
+  margin: 1rem 0 0 0;
 }
 
-.dashboard-welcome {
+.van-detail h4 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 44.15px;
+  margin: 1rem 0 0 0;
+}
+
+.van-detail span {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.van-detail p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 23.92px;
+  color: #161616;
+}
+
+.van-detail .rent {
+  width: 100%;
+  height: 49.83px;
+  border-radius: 4.98px;
+
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 31.66px;
+  color: #ffffff;
+
+  background: #ff8c38;
+}
+
+/* /* Host styling  */
+
+/* Dashboard styling */
+
+.dashboard {
+  margin-top: 1rem;
+}
+
+.dashboard .welcome {
+  height: 219px;
   background-color: #ffead0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
 }
 
-.dashboard-review {
-  background: #FFDDB2;
+.dashboard .welcome h2 {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 22px;
+  color: #161616;
+}
 
+.dashboard .welcome p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #4d4d4d;
+}
+
+.dashboard .welcome span {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+  color: #161616;
+
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.dashboard .welcome h6 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #161616;
+}
+
+.dashboard .review {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dashboard .review h3 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 22px;
+  margin: 0;
+  color: #161616;
+}
+
+.dashboard .review h6 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 22px;
+  color: #161616;
+  margin: 0;
+}
+
+.dashboard .review span {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #4d4d4d;
+}
+
+.dashboard .review p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #161616;
+  margin: 0 0 0 auto;
+}
+
+.dashboard .listed-vans h3 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 22px;
+  color: #161616;
+}
+
+.dashboard .listed-vans h5 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #161616;
+}
+.dashboard .listed-vans h4 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #161616;
+}
+
+.dashboard .listed-vans p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 31.66px;
+  color: #4d4d4d;
+}
+
+.dashboard .listed-vans img {
+  border-radius: 5px;
+  height: 65.88px;
+  width: 65.88px;
 }

@@ -4,6 +4,7 @@ import useFetch from "../../constants/useFetch";
 
 import { hostVansLinks } from "../../constants";
 import { TbEdit } from "react-icons/tb";
+import { BsArrowLeft } from "react-icons/bs";
 
 const HostVansDetail = () => {
   const { id } = useParams();
@@ -13,13 +14,24 @@ const HostVansDetail = () => {
     <>
       <div className="container ">
         <div>
-          <Link
-            to=".."
-            relative="path"
-            className="text-dark text-decoration-none "
-          >
-            <FaArrowLeft /> <span className="ms-2 text-decoration-underline link-offset-2">Back to all vans</span>
+          <Link to="..">
+            <div
+              style={{
+                textDecoration: "underline",
+                display: "flex",
+                alignItems: "center",
+                gap: "0.35rem",
+                fontWeight: "500",
+                fontSize: "15.95px",
+                lineHeight: "22.92px",
+                color: "#201f1d",
+              }}
+            >
+              <BsArrowLeft style={{ color: "#858585" }} />
+              <p className="mb-0">Back to all vans</p>
+            </div>
           </Link>
+
           {isPending && <p>Loading...</p>}
           {error && <p>{error}</p>}
           {data && (
@@ -57,7 +69,9 @@ const HostVansDetail = () => {
               className={({ isActive }) =>
                 `text-dark ${
                   index !== hostVansLinks.length - 1 && "me-3 me-md-5"
-                } ${!isActive && "text-decoration-none"} ${isActive && 'fw-bold'} `
+                } ${!isActive && "text-decoration-none"} ${
+                  isActive && "fw-bold"
+                } `
               }
             >
               {link.title}

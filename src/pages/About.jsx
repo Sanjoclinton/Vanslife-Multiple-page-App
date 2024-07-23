@@ -4,31 +4,34 @@ import { Link } from "react-router-dom";
 
 const About = () => {
   return (
-    <div className="w-100 h-auto">
+    <div className="about">
       <div>
-        <img className="about-img" src={about} alt="about hero" />
+        <img src={about} alt="about hero" />
       </div>
       <div className="container py-5">
-        <h2 className=" fw-bold">
-          Don't squeeze in a sedan when you could relax in a van.
-        </h2>
-        <p className="mt-3 fw-medium">
+        <h2>Don't squeeze in a sedan when you could relax in a van.</h2>
+        <p className="mt-3">
           Our mission is to enliven your road trip with the perfect travel van
           rental. Our vans are recertified before each trip to ensure travel
           plans can go off without a hitch <br />
-          (Hitch cost extra 😞)
+          (Hitch cost extra 😉)
         </p>
 
-        <p className="mt-3 fw-medium ">
+        <p className="mt-3">
           Our team us full of vanlife enthusiasts who know firsthand the magic
           of touring the world on 4 wheels
         </p>
 
-        <div className="mt-5 explore ">
-          <h5 className="fw-bold">
+        <div className="mt-5 explore-container ">
+          <h5>
             Your destination is waiting. <br /> Your van is ready.
           </h5>
-          <Link className="explore-btn" to="/vans">Explore our vans</Link>
+          <button>
+          <Link to="/vans">
+            Explore our vans
+          </Link>
+          </button>
+         
         </div>
       </div>
     </div>
