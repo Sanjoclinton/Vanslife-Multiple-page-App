@@ -140,7 +140,7 @@ footer p {
   display: flex;
   flex-direction: column;
   justify-content: center;
- 
+
   border-radius: 5px;
   padding: 2rem 2rem;
   background-color: #ffcc8d;
@@ -213,7 +213,7 @@ footer p {
 
 .vans button,
 .van-type {
-  width: 85.71px;
+  width: 65.71px;
   height: 33.89px;
   border-radius: 5px;
   border: none;
@@ -224,18 +224,44 @@ footer p {
   font-size: 12px;
   font-weight: 600;
   line-height: 14.66px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.bg-filter {
+  background-color: #ffead0;
+}
+
+.clear {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 23.92px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: #4d4d4d !important;
+  background: none;
+  
+}
+
+.hov-simple:hover,
+.hov-simple:active,
 .simple {
   background: #e17654;
+  color: #ffffff !important;
 }
 
+.hov-rugged:hover,
 .rugged {
   background: #115e59;
+  color: #ffffff !important;
 }
 
+.hov-luxury:hover,
 .luxury {
   background-color: #161616;
+  color: #ffffff !important;
 }
 
 /* Van detail styling */
@@ -426,7 +452,6 @@ footer p {
   font-weight: 700;
   line-height: 21.46px;
   color: #161616;
-  
 }
 
 .details .info span {
@@ -558,6 +583,6 @@ footer p {
 }
 
 .income .transaction p {
-font-size: 18px;
-line-height: 31.66px;
+  font-size: 18px;
+  line-height: 31.66px;
 }

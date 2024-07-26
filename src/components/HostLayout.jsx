@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { hostNav } from "../constants";
 
