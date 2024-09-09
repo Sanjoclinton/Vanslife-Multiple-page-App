@@ -234,6 +234,14 @@ footer p {
   background-color: #ffead0;
 }
 
+.bg-404 {
+  background-color: #fef6ea;
+}
+
+.text-404 {
+  color: #fef6ea;
+}
+
 .clear {
   font-size: 14px;
   font-weight: 500;
@@ -242,7 +250,6 @@ footer p {
   text-underline-offset: 3px;
   color: #4d4d4d !important;
   background: none;
-  
 }
 
 .hov-simple:hover,

@@ -17,7 +17,7 @@ const HostVans = () => {
       >
         Your listed vans
       </h1>
-      {isPending && <p>Loading...</p>}
+      {isPending && <h2 className="fw-bold fs-2">Loading...</h2>}
       {error && <p>{error}</p>}
       {data &&
         data.slice(0, 3).map((van) => (

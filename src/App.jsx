@@ -13,6 +13,7 @@ import {
   Details,
   Pricing,
   Photos,
+  ErrorPage
 } from "./pages/import";
 
 import "./server";
@@ -47,6 +48,7 @@ const App = () => {
       ) : (
         <Routes>
           <Route path="/" element={<Layout />}>
+            <Route path="*" element={<ErrorPage />} />
             <Route index element={<HomePage />} />
             <Route path="/about" element={<About />} />
 

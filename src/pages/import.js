@@ -10,6 +10,7 @@ import HostVansDetail from "./hostPages/HostVansDetail";
 import Details from "./hostPages/Details";
 import Pricing from "./hostPages/Pricing";
 import Photos from "./hostPages/Photos";
+import ErrorPage from "./ErrorPage";
 
 export {
   About,
@@ -24,4 +25,5 @@ export {
   Details,
   Pricing,
   Photos,
+  ErrorPage
 };

@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
 import useFetch from "../../constants/useFetch";
 import { BsArrowLeft } from "react-icons/bs";
 
@@ -7,9 +7,14 @@ const VanDetail = () => {
 
   const { data, isPending, error } = useFetch(`/api/vans/${id}`);
 
+  const location = useLocation();
+  console.log(location);
+  const search = location.state?.search || "";
+  const type = location.state?.type || "all";
+
   return (
     <div className="container van-detail">
-      <Link to="..">
+      <Link to={`..?${search}`}>
         <div
           style={{
             textDecoration: "underline",
@@ -22,8 +27,8 @@ const VanDetail = () => {
             color: "#201f1d",
           }}
         >
-          <BsArrowLeft style={{color: '#858585'}} />
-          <p className="mb-0">Back to all vans</p>
+          <BsArrowLeft style={{ color: "#858585" }} />
+          <p className="mb-0">Back to {type} vans</p>
         </div>
       </Link>
 
@@ -38,18 +43,15 @@ const VanDetail = () => {
           </div>
 
           <div className="w-100 flex-fill">
-            <button className={`${data.type}`}>
-              {data.type}
-            </button>
-            <h3 >{data.name}</h3>
-              <h4>${data.price}<span>/day</span></h4>
-      
+            <button className={`${data.type}`}>{data.type}</button>
+            <h3>{data.name}</h3>
+            <h4>
+              ${data.price}
+              <span>/day</span>
+            </h4>
+
             <p className="mt-3">{data.description}</p>
-            <button
-              className='rent'
-            >
-              Rent this van
-            </button>
+            <button className="rent">Rent this van</button>
           </div>
         </div>
       )}
