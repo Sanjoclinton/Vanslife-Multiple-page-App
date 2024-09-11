@@ -1,6 +1,6 @@
 import About from "./About";
 import HomePage from "./HomePage";
-import Vans from "./vans/Vans";
+import Vans, { loader as vansLoader } from "./vans/Vans";
 import VanDetail from "./vans/VanDetail";
 import Reviews from "./hostPages/Reviews";
 import Dashboard from "./hostPages/Dashboard";
@@ -11,11 +11,12 @@ import Details from "./hostPages/Details";
 import Pricing from "./hostPages/Pricing";
 import Photos from "./hostPages/Photos";
 import ErrorPage from "./ErrorPage";
+ import Login from "./Login";
 
 export {
   About,
   HomePage,
-  Vans,
+  Vans, vansLoader,
   VanDetail,
   Reviews,
   Dashboard,
@@ -25,5 +26,6 @@ export {
   Details,
   Pricing,
   Photos,
-  ErrorPage
+  ErrorPage,
+  Login
 };

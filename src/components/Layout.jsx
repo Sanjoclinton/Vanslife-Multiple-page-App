@@ -8,7 +8,6 @@ const Layout = () => {
     <>
       <div className="min-vh-100 d-flex flex-column">
         <Nav />
-      
         <div className="mb-auto">
         <Outlet />
         </div>
