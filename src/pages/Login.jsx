@@ -29,17 +29,17 @@ const Login = () => {
           name="email"
           id="email"
           placeholder="Email Address"
-          className="w-100 p-2 rounded border"
+          className="w-100 p-3 rounded border"
         />
         <input
           type="password"
           name="password"
           id="password"
           placeholder="Password"
-          className="w-100 p-2 rounded border"
+          className="w-100 p-3 rounded border"
         />
         <button
-          className="px-2 py-3 text-white rounded border-0 w-100 mt-4 fw-semibold" style={{background: "#ff8c38"}}
+          className="p-3 text-white rounded border-0 w-100 mt-4 fw-semibold" style={{background: "#ff8c38"}}
         >
           Log in
         </button>

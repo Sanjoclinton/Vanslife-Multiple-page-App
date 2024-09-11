@@ -24,7 +24,7 @@ const Nav = () => {
           </div>
 
           <NavLink to="login" className="d-flex align-items-center justify-content-center" >
-            <TbUserCircle size={24} />
+            <TbUserCircle size={20} />
           </NavLink>
           </div>
         </nav>
