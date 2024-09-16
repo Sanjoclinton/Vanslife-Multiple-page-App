@@ -1,29 +1,21 @@
-import useFetch from "../../constants/useFetch";
-import { Link } from "react-router-dom";
+import { Suspense } from "react";
+import { fetchHostVans } from "../../constants/asyncFetch";
+import { Await, defer, Link, useLoaderData } from "react-router-dom";
+
+export async function loader({}) {
+  return defer({ vans: fetchHostVans() });
+}
 
 const HostVans = () => {
-  const { data, error, isPending } = useFetch("/api/vans");
+  const loadedData = useLoaderData();
 
-  return (
-    <div className="container mt-4 ">
-      <h1
-        style={{
-          fontSize: "32px",
-          fontWeight: " 700",
-          lineHeight: "33.65px",
-          color: "#161616",
-          marginBottom: "2rem",
-        }}
-      >
-        Your listed vans
-      </h1>
-      {isPending && <h2 className="fw-bold fs-2">Loading...</h2>}
-      {error && <p>{error}</p>}
-      {data &&
-        data.slice(0, 3).map((van) => (
+  function renderVans(vans) {
+    return (
+      <>
+        {vans.map((van) => (
           <Link
             key={van.id}
-            to={`/host/vans/${van.id}`}
+            to={van.id}
             className="text-decoration-none text-dark"
           >
             <div className="d-flex flex-column w-full p-3 bg-white mb-3 rounded-2 ">
@@ -64,6 +56,27 @@ const HostVans = () => {
             </div>
           </Link>
         ))}
+      </>
+    );
+  }
+
+  return (
+    <div className="container mt-4 ">
+      <h1
+        style={{
+          fontSize: "32px",
+          fontWeight: " 700",
+          lineHeight: "33.65px",
+          color: "#161616",
+          marginBottom: "2rem",
+        }}
+      >
+        Your listed vans
+      </h1>
+
+      <Suspense fallback={<h2>Loading vans...</h2>}>
+        <Await resolve={loadedData.vans}>{renderVans}</Await>
+      </Suspense>
     </div>
   );
 };

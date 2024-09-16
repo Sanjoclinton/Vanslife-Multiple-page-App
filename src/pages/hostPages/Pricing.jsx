@@ -5,26 +5,24 @@ const Pricing = () => {
   const currentVan = useOutletContext();
   return (
     <div>
-      {currentVan && (
-        <p
+      <p
+        style={{
+          fontSize: "24px",
+          fontWeight: "500",
+          lineHeight: "21.46px",
+          color: "#161616",
+          margin: "0",
+        }}
+      >
+        ${currentVan.price}.00
+        <span
           style={{
-            fontSize: "24px",
-            fontWeight: "500",
-            lineHeight: "21.46px",
-            color: "#161616",
-            margin: '0'
+            color: "#4D4D4D",
           }}
         >
-          ${currentVan.price}.00
-          <span
-            style={{
-              color: "#4D4D4D",
-            }}
-          >
-            /day
-          </span>
-        </p>
-      )}
+          /day
+        </span>
+      </p>
     </div>
   );
 };

@@ -1,9 +1,47 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { FaStar } from "react-icons/fa6";
-import useFetch from "../../constants/useFetch";
+import { fetchHostVans } from "../../constants/asyncFetch";
+import { Await, defer, useLoaderData } from "react-router-dom";
+
+export async function loader() {
+  return defer({ vans: fetchHostVans() });
+}
 
 const Dashboard = () => {
-  const { data, isPending, error } = useFetch("/api/vans");
+  const loaderData = useLoaderData();
+
+  function renderVans(vans) {
+    return(
+      <>
+      <div className="container listed-vans py-4">
+        <div className="d-flex justify-content-between mt-2 mb-4">
+          <h3>Your listed vans</h3>
+          <h5>View all</h5>
+          
+        </div>
+        {vans.map((van) => (
+          <div
+            key={van.id}
+            className="d-flex align-items-center bg-white p-3 my-3"
+          >
+            <img
+              src={van.imageUrl}
+              width={50}
+              alt={van.name}
+              className="rounded-1"
+            />
+            <div className="ms-3">
+              <h4 className="mb-0 fw-bold">{van.name}</h4>
+              <p className="mb-0">${van.price}/day</p>
+            </div>
+            <h5 className="ms-auto">Edit</h5>
+          </div>
+        ))}
+      </div>
+      </>
+    );
+  }
+
   return (
     <div className="dashboard">
       <div className="container welcome">
@@ -38,31 +76,10 @@ const Dashboard = () => {
           <p className="m">Details</p>
         </div>
       </div>
-      <div className="container listed-vans py-4">
-        <div className="d-flex justify-content-between mt-2 mb-4">
-          <h3 >Your listed vans</h3>
-          <h5>View all</h5>
-        </div>
-        {data &&
-          data.slice(0, 3).map((van) => (
-            <div
-              key={van.id}
-              className="d-flex align-items-center bg-white p-3 my-3"
-            >
-              <img
-                src={van.imageUrl}
-                width={50}
-                alt={van.name}
-                className="rounded-1"
-              />
-              <div className="ms-3">
-                <h4 className="mb-0 fw-bold">{van.name}</h4>
-                <p className="mb-0">${van.price}/day</p>
-              </div>
-              <h5 className="ms-auto">Edit</h5>
-            </div>
-          ))}
-      </div>
+      <Suspense fallback={<h2>Loading vans...</h2>}>
+            <Await resolve={loaderData.vans}>{renderVans}</Await>
+          </Suspense>
+      
     </div>
   );
 };

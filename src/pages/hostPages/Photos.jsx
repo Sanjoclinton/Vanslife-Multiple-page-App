@@ -5,17 +5,15 @@ const Photos = () => {
   const currentVan = useOutletContext();
   return (
     <div>
-      {currentVan && (
-        <img
-          src={currentVan.imageUrl}
-          alt={currentVan.name}
-          style={{
-            width: "103px",
-            height: "101.56px",
-            borderRadius: "5px",
-          }}
-        />
-      )}
+      <img
+        src={currentVan.imageUrl}
+        alt={currentVan.name}
+        style={{
+          width: "103px",
+          height: "101.56px",
+          borderRadius: "5px",
+        }}
+      />
     </div>
   );
 };
