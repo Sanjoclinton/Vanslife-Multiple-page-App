@@ -7,12 +7,11 @@ import {
 } from "react-router-dom";
 
 import { BsArrowLeft } from "react-icons/bs";
-import { fetchVans } from "../../constants/asyncFetch";
+import { fetchVan } from "../../constants/asyncFetch";
 import { Suspense } from "react";
-import { GiH2O } from "react-icons/gi";
 
 export async function loader({ params }) {
-  return defer({ van: fetchVans(params.id) });
+  return defer({ van: fetchVan(params.id) });
 }
 
 const VanDetail = () => {

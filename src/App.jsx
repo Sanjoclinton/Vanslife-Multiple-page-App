@@ -29,12 +29,12 @@ import {
   loginAction,
 } from "./pages/import";
 
-import "./server";
+// import "./server";
 import Layout from "./components/Layout";
 import HostLayout from "./components/HostLayout";
 import Error from "./components/Error";
 
-import { requireAuth } from "./constants/utils";
+// import { requireAuth } from "./constants/utils";
 import { authLoader } from "./constants/utils";
 
 const router = createBrowserRouter(

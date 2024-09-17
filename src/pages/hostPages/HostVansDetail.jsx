@@ -2,11 +2,11 @@ import { Await, Link, NavLink, Outlet, useLoaderData } from "react-router-dom";
 
 import { hostVansLinks } from "../../constants";
 import { BsArrowLeft } from "react-icons/bs";
-import { fetchHostVans } from "../../constants/asyncFetch";
+import { fetchHostVan } from "../../constants/asyncFetch";
 import { Suspense } from "react";
 
 export function loader({ params }) {
-  return { van: fetchHostVans(params.id) };
+  return { van: fetchHostVan(params.id) };
 }
 
 const HostVansDetail = () => {
