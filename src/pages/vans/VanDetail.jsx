@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 
 import { BsArrowLeft } from "react-icons/bs";
-import { fetchVan } from "../../constants/asyncFetch";
+import { fetchVan } from "../../constants/api";
 import { Suspense } from "react";
 
 export async function loader({ params }) {

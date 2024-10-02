@@ -1,9 +1,11 @@
-import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import { NavLink, Outlet, redirect, useNavigate } from "react-router-dom";
 import { hostNav } from "../constants";
 import { BiLogOut } from "react-icons/bi";
+import { auth } from "../constants/api";
+import { signOut } from "firebase/auth";
+
 
 const HostLayout = () => {
-  const navigate = useNavigate();
 
   return (
     <>
@@ -21,15 +23,6 @@ const HostLayout = () => {
               </NavLink>
             ))}
           </nav>
-          <button
-            className="bg-transparent border-0"
-            onClick={() => {
-              localStorage.removeItem("loggedIn");
-              navigate("/login");
-            }}
-          >
-            <BiLogOut size={22} />
-          </button>
         </div>
       </div>
       <Outlet />

@@ -27,6 +27,8 @@ import {
   Login,
   loginLoader,
   loginAction,
+  SignUp,
+  signUpAction,
 } from "./pages/import";
 
 // import "./server";
@@ -34,14 +36,15 @@ import Layout from "./components/Layout";
 import HostLayout from "./components/HostLayout";
 import Error from "./components/Error";
 
-// import { requireAuth } from "./constants/utils";
-import { authLoader } from "./constants/utils";
+import { AuthProvider } from "./contexts/AuthContext";
+import { ProtectPages } from "./pages/ProtectPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route index element={<HomePage />} />
       <Route path="about" element={<About />} />
+      <Route path="signup" element={<SignUp />} action={signUpAction} />
       <Route
         path="login"
         element={<Login />}
@@ -66,43 +69,33 @@ const router = createBrowserRouter(
       </Route>
 
       {/* Host Page */}
-      <Route path="host" element={<HostLayout />}>
-        {/* Dashboard */}
-        <Route
-          index
-          element={<Dashboard />}
-          loader={authLoader(dashboardLoader)}
-        />
-        {/* Income */}
-        <Route
-          path="income"
-          element={<Income />}
-          loader={authLoader(null)}
-        />
-        {/* Reviews */}
-        <Route
-          path="reviews"
-          element={<Reviews />}
-          loader={authLoader(null)}
-        />
-        {/* Hostvans */}
-        <Route
-          path="vans"
-          element={<HostVans />}
-          loader={authLoader(hostVansLoader)}
-          errorElement={<Error />}
-        />
+      <Route element={<ProtectPages />}>
+        <Route path="host" element={<HostLayout />}>
+          {/* Dashboard */}
+          <Route index element={<Dashboard />} loader={dashboardLoader} />
+          {/* Income */}
+          <Route path="income" element={<Income />} />
+          {/* Reviews */}
+          <Route path="reviews" element={<Reviews />} />
+          {/* Hostvans */}
+          <Route
+            path="vans"
+            element={<HostVans />}
+            loader={hostVansLoader}
+            errorElement={<Error />}
+          />
 
-        {/* HostVans Details */}
-        <Route
-          path="vans/:id"
-          element={<HostVansDetail />}
-          loader={authLoader(hostVansDetailLoader)}
-          errorElement={<Error />}
-        >
-          <Route index element={<Details />} />
-          <Route path="pricing" element={<Pricing />} />
-          <Route path="photos" element={<Photos />} />
+          {/* HostVans Details */}
+          <Route
+            path="vans/:id"
+            element={<HostVansDetail />}
+            loader={hostVansDetailLoader}
+            errorElement={<Error />}
+          >
+            <Route index element={<Details />} />
+            <Route path="pricing" element={<Pricing />} />
+            <Route path="photos" element={<Photos />} />
+          </Route>
         </Route>
       </Route>
 
@@ -112,7 +105,11 @@ const router = createBrowserRouter(
 );
 
 const App = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  );
 };
 
 export default App;

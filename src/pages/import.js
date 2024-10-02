@@ -14,6 +14,7 @@ import Pricing from "./hostPages/Pricing";
 import Photos from "./hostPages/Photos";
 import ErrorPage from "./ErrorPage";
 import Login, { loader as loginLoader, action as loginAction } from "./Login";
+import SignUp, {action as signUpAction} from "./SignUp";
 
 export {
   About,
@@ -37,4 +38,5 @@ export {
   Login,
   loginLoader,
   loginAction,
+  SignUp, signUpAction
 };

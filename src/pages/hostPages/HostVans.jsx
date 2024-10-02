@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { fetchHostVans } from "../../constants/asyncFetch";
+import { fetchHostVans } from "../../constants/api";
 import { Await, defer, Link, useLoaderData } from "react-router-dom";
 
 export async function loader({}) {

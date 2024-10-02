@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 import {
   getFirestore,
   collection,
@@ -31,7 +32,7 @@ export async function fetchVans() {
     ...doc.data(),
     id: doc.id,
   }));
-  console.log(dataArr);
+
   return dataArr;
 }
 
@@ -53,7 +54,6 @@ export async function fetchHostVans() {
     ...doc.data(),
     id: doc.id,
   }));
-  console.log(dataArr);
   return dataArr;
 }
 
@@ -68,21 +68,4 @@ export async function fetchHostVan(id) {
   return data;
 }
 
-export async function loginUser(creds) {
-  const res = await fetch("/api/login", {
-    method: "post",
-    body: JSON.stringify(creds),
-  });
-
-  const data = await res.json();
-
-  if (!res.ok) {
-    throw {
-      message: data.message,
-      statusText: res.statusText,
-      status: res.status,
-    };
-  }
-  // Parse the valid response and return the data
-  return data;
-}
+export const auth = getAuth(app);

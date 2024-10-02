@@ -1,18 +1,20 @@
-
 import {
   useLoaderData,
   redirect,
   Form,
   useActionData,
   useNavigation,
+  Link
 } from "react-router-dom";
-import { loginUser } from "../constants/asyncFetch";
+
+import {
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { auth } from "../constants/api";
 
 // Loader
 export async function loader({ request }) {
-  
   const message = new URL(request.url).searchParams.get("message");
-
 
   return message;
 }
@@ -25,14 +27,30 @@ export async function action({ request }) {
 
   const redirectTo = new URL(request.url).searchParams.get("redirectTo");
   try {
-    const data = await loginUser({ email, password });
+    await signInWithEmailAndPassword(auth, email, password);
+    // const data = await loginUser({ email, password });
 
-    localStorage.setItem("loggedIn", true);
-    const response = redirect(redirectTo || "/host");
-    response.body = true;
-    return response;
-  } catch (err) {
-    return err.message;
+    return redirect(redirectTo || "/host");
+  } catch (error) {
+    console.log(error.message, error.code);
+    let customMessage = "";
+
+    switch (error.code) {
+      case "auth/invalid-credential":
+        customMessage = "Invalid Credentials";
+        break;
+      case "auth/email-already-in-use":
+        customMessage = "This email is already registered.";
+        break;
+      case "auth/weak-password":
+        customMessage = "The password is too weak.";
+        break;
+      default:
+        customMessage = error.message; // Fallback to default message
+    }
+    // Display the custom message
+    console.log(customMessage);
+    return customMessage;
   }
 }
 
@@ -57,26 +75,39 @@ const Login = () => {
         )}
 
         <Form method="post" className="w-100" replace>
-          <input
-            type="email"
-            name="email"
-            placeholder="Email Address"
-          
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-           
-          />
+          <input type="email" name="email" placeholder="Email Address" />
+          <input type="password" name="password" placeholder="Password" />
 
-          <button disabled={navigation.state === "submitting"}
+          <button
+            disabled={navigation.state === "submitting"}
             className="p-3 text-white rounded border-0 w-100 mt-4 fw-semibold"
             style={{ background: "#ff8c38" }}
           >
             {navigation.state === "submitting" ? "Logging in" : "Log in"}
           </button>
         </Form>
+
+        <p
+          style={{
+            fontSize: "16px",
+            fontWeight: "500",
+            lineHeight: "24px",
+            textAlign: "center",
+          }}
+        >
+          Don't have an account?{" "}
+          <Link to="../signup"
+            style={{
+              fontSize: "16px",
+              fontWeight: "700",
+              lineHeight: "24px",
+              textAlign: "center",
+              color: " #FF8C38",
+            }}
+          >
+            Create one now!
+          </Link>
+        </p>
       </div>
     </>
   );
