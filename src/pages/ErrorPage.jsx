@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ErrorPage = () => {
   return (
-    <div className="container">
+    <div className="container h-full">
       <div className="bg-404">
         <h1 className="fw-bold">
           Sorry, the page you were looking for was not found.
