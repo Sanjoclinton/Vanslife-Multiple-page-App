@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, useNavigation } from "react-router-dom";
+import { Form, redirect, useActionData, useNavigation } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../constants/api";
 
@@ -9,34 +9,49 @@ export async function action({ request }) {
   const password = formData.get("password");
 
   try {
-    const data =  await createUserWithEmailAndPassword(auth, email, password);
+    const data = await createUserWithEmailAndPassword(auth, email, password);
     console.log(data);
-    return data;
+    return redirect("/host");
   } catch (error) {
-    console.log(error);
-    return error;
+    let errorMessage;
+    switch (error.code) {
+      case "auth/email-already-in-use":
+        errorMessage = "Email is already in use, try signing in";
+        break;
+
+      case "auth/invalid-email":
+        errorMessage = "Invalid Email"
+        break;
+
+      case "auth/weak-password":
+        errorMessage = "Weak password, please try again";
+        break;
+
+      default:
+        errorMessage =
+          "An error occured, check details and try signing up again";
+    }
+    console.log(errorMessage);
+    return errorMessage;
   }
 }
 
 const SignUp = () => {
-    const navigation = useNavigation();
-    
+  const navigation = useNavigation();
+  const error = useActionData();
+
   return (
     <>
       <div className="container py-4 text-center d-flex flex-column gap-4 ">
         <h1 className="w-100 fw-bold">Create an account</h1>
-        {/* {message && (
-          <h3 className="text-danger fw-bold" style={{ fontSize: "15px" }}>
-            {message}!
-          </h3>
-        )}
+
         {error && (
           <h3 className="text-danger fw-bold" style={{ fontSize: "15px" }}>
             {error}!
           </h3>
-        )} */}
+        )}
 
-        <Form method="post" className="w-100" replace>
+        <Form method="post" className="w-100" replace noValidate>
           <input type="email" name="email" placeholder="Email Address" />
           <input type="password" name="password" placeholder="Password" />
 

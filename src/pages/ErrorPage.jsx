@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const ErrorPage = () => {
   return (
     <div className="container h-full">
-      <div className="bg-404">
+      <div className="bg-404" style={{marginTop: "200px"}}>
         <h1 className="fw-bold">
           Sorry, the page you were looking for was not found.
         </h1>
